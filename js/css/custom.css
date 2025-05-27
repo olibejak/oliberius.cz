@@ -1,0 +1,118 @@
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 99%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+
+.img-fluid {
+  width: 100%;
+  padding: 85px 0 0;
+}
+.bottomright {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 10px;  
+  color: white;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.navbar-brand {
+  font-family: 'Lucida Handwriting', cursive;
+}
+
+.navbar-nav {
+  font-size: 25px;
+  padding: 0px 50px;
+}
+a.dropdown-item:hover {
+  background: #ccff99 !important;
+}
+@media screen and (max-width: 828px) {
+  .navbar-nav {
+    font-size: 18px !important;
+  }}
+
+
+
+a.dropdown-item {
+  font-size: 20px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+
+a.list-group-item:hover, a.active {
+  background: #ccff99 !important;
+  color: black !important;
+  border-color: #00e64d !important;
+}
+
+.list-group-item {
+  font-size: 22px;
+}
+
+.tab-pane, p.index  {
+  font-size: 20px;
+  line-height: 200%;
+  text-align: justify;
+}
+
+div.kontakt, .table {
+  font-size: 20px;
+  padding: 10px 80px;
+  text-align: center;
+}
+
+.table {
+  width: auto !important;
+  margin: auto;
+}
+
+a.mail[href]{
+  text-decoration: underline;
+  color: black;
+}
+
+@media screen and (max-width: 828px) {
+  p.index, div.kontakt, .tab-pane, .table {
+    font-size: 17px;
+  }}
+@media screen and (max-width: 828px) {
+  h1, .list-group-item {
+    font-size: 22px;
+  }}
+@media screen and (max-width: 828px) {
+  .list-group-item {
+    font-size: 18px;
+  }}
