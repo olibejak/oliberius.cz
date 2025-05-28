@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css';
 import Navbar from "./components/navbar/Navbar";
@@ -20,7 +19,7 @@ function App() {
           {/*          <Breadcrumb /> */}
 
           <Routes>
-            {/*           <Route path="/index" element={<HomePage />} />*/}
+            {/*           <Route path="/" element={<HomePage />} />*/}
             {/*            <Route path="/vazby" element={<ProductPage />} />*/}
             {/*            <Route path="/prodejna/" element={<ShopPage />} />*/}
             {/*            <Route path="/admin" element={<AdminPage />} />*/}

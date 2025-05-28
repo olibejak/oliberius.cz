@@ -1,4 +1,5 @@
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
+import type { ReactNode } from "react";
 
 export type Theme = "light" | "dark";
 
@@ -10,7 +11,7 @@ const ThemeContext = createContext<{
   changeTheme: () => { }
 });
 
-function ThemeProvider({ children }: { children: ReactNode }) {
+const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
   const [theme, setTheme] = useState<Theme>("light")
   const changeTheme = () => {
