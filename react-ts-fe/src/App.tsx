@@ -9,12 +9,12 @@ import HomePage from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
 import AdminPage from "./pages/AdminPage";
 import PageNotFound from "./pages/PageNotFound"
-import { LanguageProvider } from "./context/DarkModeContext";
+import { DarkModeProvider } from "./context/DarkModeContext";
 
 function App() {
   return (
     <Router>
-      <LanguageProvider>
+      <DarkModeProvider>
         <div className="App">
           <Navbar />
           <Breadcrumb />
@@ -30,7 +30,7 @@ function App() {
 
           <Footer />
         </div>
-      </LanguageProvider>
+      </DarkModeProvider>
     </Router>
   );
 }
