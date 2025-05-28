@@ -1,10 +1,30 @@
 nav {
+  top: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  min-width: 100%;
 }
 
 nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   list-style: none;
+  min-width: 100%;
+  border-color: var(--accent-color)
+}
+
+nav ul.header {
+  gap: 50%;
+}
+
+nav ul.item-list {
+  background-color: var(--navbar-bg);
+}
+
+nav li.list-item * {
+  color: var(--navbar-text);
 }
 
 nav a {

@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useContext } from "react";
+import { Route, Routes } from "react-router-dom";
 import './App.css';
 import Navbar from "./components/navbar/Navbar";
 //import Breadcrumb from "./components/breadcrumb/Breadcrumb";
@@ -8,29 +9,28 @@ import Navbar from "./components/navbar/Navbar";
 //import ShopPage from "./pages/ShopPage";
 //import AdminPage from "./pages/AdminPage";
 //import PageNotFound from "./pages/PageNotFound"
-import { ThemeProvider } from "./context/ThemeContext";
+import { ThemeContext } from "./context/ThemeContext";
 
 function App() {
+
+  const { theme } = useContext(ThemeContext)
+
   return (
-    <Router>
-      <ThemeProvider>
-        <div className="App">
-          <Navbar />
-          {/*          <Breadcrumb /> */}
+    <div className="App" data-theme={theme}>
+      <Navbar />
+      {/*          <Breadcrumb /> */}
 
-          <Routes>
-            {/*           <Route path="/" element={<HomePage />} />*/}
-            {/*            <Route path="/vazby" element={<ProductPage />} />*/}
-            {/*            <Route path="/prodejna/" element={<ShopPage />} />*/}
-            {/*            <Route path="/admin" element={<AdminPage />} />*/}
+      <Routes>
+        {/*           <Route path="/" element={<HomePage />} />*/}
+        {/*            <Route path="/vazby" element={<ProductPage />} />*/}
+        {/*            <Route path="/prodejna/" element={<ShopPage />} />*/}
+        {/*            <Route path="/admin" element={<AdminPage />} />*/}
 
-            {/*            <Route path="*" element={<PageNotFound />} />*/}
-          </Routes>
+        {/*            <Route path="*" element={<PageNotFound />} />*/}
+      </Routes>
 
-          {/*          <Footer />*/}
-        </div>
-      </ThemeProvider>
-    </Router>
+      {/*          <Footer />*/}
+    </div>
   );
 }
 

@@ -13,11 +13,11 @@ const DropdownProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <div>
+    <>
       <DropdownContext.Provider value={{ isOpen, toggleOpen }}>
         {children}
       </DropdownContext.Provider>
-    </div>
+    </>
   )
 
 };

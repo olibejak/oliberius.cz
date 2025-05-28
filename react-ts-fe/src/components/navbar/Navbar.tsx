@@ -25,9 +25,23 @@ const Navbar = () => {
   return (
     <nav>
       <DropdownProvider>
-        <ul className="nav-item-list">
+        <ul className="header">
+          <li className="header-item">
+            <Link to={"/"}>
+              Zahradnictví Oliberius
+            </Link>
+          </li>
+          <li className="header-item">
+            <img src={themeIconMap[theme]}
+              alt={`${theme} mode icon`}
+              onClick={changeTheme}
+              className="color-mode-icon"
+            />
+          </li>
+        </ul>
+        <ul className="item-list">
           {navbarItems.map((item, index) =>
-            <li key={index} className="nav-item">
+            <li key={index} className="list-item" >
               {item.children ? (
                 <Dropdown item={item} />
               ) : (
@@ -37,13 +51,6 @@ const Navbar = () => {
               )}
             </li>
           )}
-          <li className="nav-item">
-            <img src={themeIconMap[theme]}
-              alt={`${theme} mode icon`}
-              onClick={changeTheme}
-              className="color-mode-icon"
-            />
-          </li>
         </ul>
       </DropdownProvider>
     </nav>

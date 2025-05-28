@@ -21,11 +21,11 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <div>
+    <>
       <ThemeContext.Provider value={{ theme, changeTheme }}>
         {children}
       </ThemeContext.Provider>
-    </div>
+    </>
   )
 }
 
