@@ -31,13 +31,15 @@ const Dropdown = ({ item }: { item: NavbarItem }) => {
   };
 
   return (
-    <div className="dropdown">
-      <div onClick={toggleOpen}>
+    <div className="dropdown"
+      onMouseEnter={toggleOpen}
+      onMouseLeave={toggleOpen}>
+      <span>
         {item.label}
         <img src={isOpen ? iconMap[theme]["up"] : iconMap[theme]["down"]}
           alt="dropdown arrow"
         />
-      </div>
+      </span>
       <ul className={isOpen ? "dropdown-open" : "dropdown-closed"}>
         {item.children?.map((child, index) => (
           <li key={index}>

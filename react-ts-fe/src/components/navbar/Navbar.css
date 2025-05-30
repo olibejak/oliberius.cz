@@ -3,53 +3,72 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 100%;
+  width: 100%;
 }
 
 nav ul {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   list-style: none;
   min-width: 100%;
   border-color: var(--accent-color);
   margin: 0;
+  padding: 0;
+  box-sizing: content-box
+}
+
+nav>ul div,
+nav>ul a {
+  color: var(--navbar-text);
+  font-size: 3vh;
+}
+
+nav ul.dropdown-open a {
+  font-size: 2.5vh;
+}
+
+nav li {
   padding: 1vh;
 }
 
-nav ul * {
-  color: var(--navbar-text)
+nav li:has(div) {
+  padding: 0;
+}
+
+nav ul.item-list li:hover {
+  background-color: var(--accent-color);
 }
 
 nav ul.header {
-  gap: 50%;
-  height: 2.5em;
+  gap: 33%;
+}
+
+nav ul.header li {
+  cursor: pointer;
 }
 
 nav ul.item-list {
   background-color: var(--navbar-bg);
-  height: 2.5em;
 }
-
-nav li.list-item * {
-  font-size: 3vh;
-}
-
 
 nav li.list-item img {
   width: 4vh;
-  height: 4vh;
+  height: 3vh;
   transform: translateX(-0.1em)
 }
 
 nav .dropdown {
   position: relative;
+  padding: 1vh;
 }
 
-nav .dropdown div {
+nav .dropdown span {
   display: flex;
-  align-items: center;
+  justify-self: center;
+  height: fit-content;
+  width: fit-content;
 }
 
 nav .dropdown-closed {
@@ -61,11 +80,18 @@ nav .dropdown-open {
   display: flex;
   flex-direction: column;
   min-width: 160px;
-  padding: 12px 16px;
   z-index: 1;
   gap: 1vh;
   white-space: nowrap;
-  font-size: 1vh;
+  width: max-content;
+  background-color: var(--navbar-bg);
+  padding: 0;
+  margin: 1vh;
+}
+
+nav .dropdown-open li {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 nav a {
