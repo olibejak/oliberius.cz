@@ -9,8 +9,8 @@ import LightArrowDown from "../../assets/icons/light_keyboard_arrow_down.svg"
 import DarkArrowUp from "../../assets/icons/dark_keyboard_arrow_up.svg"
 import DarkArrowDown from "../../assets/icons/dark_keyboard_arrow_down.svg"
 import { ThemeContext } from "../../context/ThemeContext";
-import type Theme from "../../types/Theme"
-
+import type { Theme } from "../../types/Theme"
+import type { ArrowDirection } from "../../types/Icon";
 
 
 const Dropdown = ({ item }: { item: NavbarItem }) => {
@@ -19,7 +19,7 @@ const Dropdown = ({ item }: { item: NavbarItem }) => {
 
   const { isOpen, toggleOpen } = useContext(DropdownContext);
 
-  const iconMap: Record<Theme, Record<Direction, string>> = {
+  const iconMap: Record<Theme, Record<ArrowDirection, string>> = {
     dark: {
       up: LightArrowUp,
       down: LightArrowDown,
