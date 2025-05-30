@@ -8,9 +8,10 @@ import DarkModeIcon from "../../assets/icons/dark_mode.svg";
 import LightModeIcon from "../../assets/icons/light_mode.svg";
 import { ThemeContext } from "../../context/ThemeContext";
 import { DropdownProvider } from "../../context/DropdownContext.tsx";
+import type { Theme } from "../../types/Theme.tsx"
 
 
-const themeIconMap: Record<"light" | "dark", string> = {
+const themeIconMap: Record<Theme, string> = {
   light: DarkModeIcon,
   dark: LightModeIcon,
 };

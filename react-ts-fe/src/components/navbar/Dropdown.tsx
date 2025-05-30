@@ -4,18 +4,37 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { type NavbarItem } from "./NavbarItems";
 import { DropdownContext } from "../../context/DropdownContext";
-import ArrowUp from "../../assets/icons/keyboard_arrow_up.svg"
-import ArrowDown from "../../assets/icons/keyboard_arrow_down.svg"
+import LightArrowUp from "../../assets/icons/light_keyboard_arrow_up.svg"
+import LightArrowDown from "../../assets/icons/light_keyboard_arrow_down.svg"
+import DarkArrowUp from "../../assets/icons/dark_keyboard_arrow_up.svg"
+import DarkArrowDown from "../../assets/icons/dark_keyboard_arrow_down.svg"
+import { ThemeContext } from "../../context/ThemeContext";
+import type Theme from "../../types/Theme"
+
+
 
 const Dropdown = ({ item }: { item: NavbarItem }) => {
 
+  const { theme } = useContext(ThemeContext)
+
   const { isOpen, toggleOpen } = useContext(DropdownContext);
+
+  const iconMap: Record<Theme, Record<Direction, string>> = {
+    dark: {
+      up: LightArrowUp,
+      down: LightArrowDown,
+    },
+    light: {
+      up: DarkArrowUp,
+      down: DarkArrowDown,
+    },
+  };
 
   return (
     <div className="dropdown">
       <div onClick={toggleOpen}>
         {item.label}
-        <img src={isOpen ? ArrowUp : ArrowDown}
+        <img src={isOpen ? iconMap[theme]["up"] : iconMap[theme]["down"]}
           alt="dropdown arrow"
         />
       </div>

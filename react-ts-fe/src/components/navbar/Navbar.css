@@ -10,27 +10,64 @@ nav ul {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   list-style: none;
   min-width: 100%;
-  border-color: var(--accent-color)
+  border-color: var(--accent-color);
+  margin: 0;
+  padding: 1vh;
+}
+
+nav ul * {
+  color: var(--navbar-text)
 }
 
 nav ul.header {
   gap: 50%;
+  height: 2.5em;
 }
 
 nav ul.item-list {
   background-color: var(--navbar-bg);
+  height: 2.5em;
 }
 
 nav li.list-item * {
-  color: var(--navbar-text);
+  font-size: 3vh;
+}
+
+
+nav li.list-item img {
+  width: 4vh;
+  height: 4vh;
+  transform: translateX(-0.1em)
+}
+
+nav .dropdown {
+  position: relative;
+}
+
+nav .dropdown div {
+  display: flex;
+  align-items: center;
+}
+
+nav .dropdown-closed {
+  display: none;
+}
+
+nav .dropdown-open {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  padding: 12px 16px;
+  z-index: 1;
+  gap: 1vh;
+  white-space: nowrap;
+  font-size: 1vh;
 }
 
 nav a {
   text-decoration: none;
-}
-
-.dropdown-closed {
-  display: none;
 }
